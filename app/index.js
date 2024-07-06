@@ -23,7 +23,8 @@ return(
         />
 
 
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false} nestedScrollEnabled>
+        
             <View style={{
                     flex:1,
                     padding:SIZES.medium

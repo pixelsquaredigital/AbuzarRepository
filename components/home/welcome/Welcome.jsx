@@ -38,12 +38,16 @@ const Welcome = () => {
       </View>
 
       <View style={styles.tabsContainer}>
-        <FlatList data={jobTypes}
+        <FlatList data={jobTypes} nestedScrollEnabled
           renderItem={({item})=>(
           <TouchableOpacity 
           style={styles.tab(activeJobType,item)}
+          onPress={()=>{
+            setActiveJobType(item);
+            router.push('/search/${item}')
+          }}
           >
-            <Text>
+            <Text style={styles.tabText(activeJobType,item)}>
               {item}
             </Text>
           </TouchableOpacity>
